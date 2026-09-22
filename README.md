@@ -25,7 +25,7 @@ Les assurés digitaux au Sénégal (paiement via Wave/Orange Money) tombent en r
 
 ## 💡 Énoncé HMW
 
-> Comment pourrions-nous rendre la régularisation d'un impayé aussi rapide et naturelle qu'un paiement mobile ordinaire, pour que les assurés en revenus irréguliers restent à jour sans effort ?
+> Comment pourrions-nous permettre aux assurés digitaux à revenus irréguliers de régulariser leurs cotisations d'assurance vie dès qu'ils ont les fonds disponibles, sans passer par une relance qui les met mal à l'aise ?
 
 Voir [`docs/carte-empathie.md`](docs/carte-empathie.md) et [`docs/hmw.md`](docs/hmw.md) pour le détail.
 
