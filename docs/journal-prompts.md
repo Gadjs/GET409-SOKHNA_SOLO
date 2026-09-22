@@ -1,46 +1,95 @@
-# Journal de Prompts
-## P1 — Zero-Shot
-**Prompt envoyé :Tu es consultant en fidélisation client dans le secteur de l'assurance vie digitale en Afrique de l'Ouest. Identifie les 3 principaux problèmes qu'une entrepreneure à revenus irréguliers à Dakar rencontre pour régulariser ses cotisations d'assurance vie à échéance fixe. 
-**Réponse IA (résumé) :Les entrepreneures à revenus irréguliers peinent à respecter des échéances fixes, ce qui crée des impayés techniques malgré une capacité réelle à cotiser sur l’année.
-Le rattrapage est souvent complexe et manque de visibilité : montant dû, délais et conséquences du retard ne sont pas toujours clairement communiqués.
-Piste : proposer une cotisation flexible avec Mobile Money, un minimum annuel et des rappels automatisés pour réduire les impayés et fidéliser ces clientes.
-**Note :** 2/5 
-**Itération :** si < 3/5, prompt reformulé
+# Journal de Prompts — Séance 1
 
-## P2 — Zero-Shot
-**Prompt envoyé :Propose 5 idées de fonctionnalités pour un MVP d'application qui aide les assurés à revenus irréguliers à régulariser facilement leurs cotisations d'assurance vie via Wave ou Orange Money. 
-**Réponse IA (résumé) :Problèmes identifiés (3) — pour une entrepreneure à revenus irréguliers à Dakar :
-Décalage entre cycle de revenus imprévisible et échéances fixes → impayés "techniques"
-Complexité du rattrapage (montant à calculer, canal de paiement, confirmation) qui décourage même quand elle a les fonds
-Manque de visibilité sur les conséquences du retard (suspension, perte de garanties), découvertes trop tard
-**Note :** 4/5 
-**Itération :** si < 3/5, prompt reformulé
+Usage de l'IA documenté conformément au Code de déontologie IA du Lab GET 409 : l'IA assiste, les choix restent ceux de l'équipe.
+Outil : Claude (interface web). Le journal des 5 prompts techniques de la séance 2 est dans [docs/journal-prompts-s2.md](docs/journal-prompts-s2.md).
 
-## P2 — Few-shot
-**Prompt envoyé :Voici 2 exemples de défis résolus dans le secteur fintech/assurance au Sénégal :
-Défi : Les commerçants informels n'ont pas d'historique bancaire → Solution : scoring de crédit basé sur l'historique de transactions Mobile Money.
-Défi : Les agriculteurs ne peuvent pas payer leur assurance récolte en une fois → Solution : paiement fractionné aligné sur les périodes de vente.
+| # | Objectif | Technique | Note |
+|---|---|---|---|
+| S1-P1 | Choisir le défi local | Zero-Shot | 4/5 |
+| S1-P2 | Préparer le guide d'interview | Zero-Shot | 4/5 |
+| S1-P3 | Structurer la carte d'empathie | Few-Shot | 4/5 |
+| S1-P4 | Formuler les HMW | Zero-Shot → itération | 2/5 → 4/5 |
 
-Complète un 3ème défi : Les assurés à revenus irréguliers oublient leur échéance de cotisation d'assurance vie → Solution : ?
+---
 
-**Réponse IA (résumé) :Défi : Les assurés à revenus irréguliers ont des difficultés à respecter des échéances fixes de cotisation.
-Solution : Mettre en place une cotisation flexible via Mobile Money, avec rappels automatisés et possibilité de payer selon leurs périodes de revenus.
-**Note :** 4/5 
-**Itération :** si < 3/5, prompt reformulé
+## S1-P1 — Choisir le défi local
 
-Voici 2 exemples de défis résolus dans le secteur fintech/assurance au Sénégal :
-Défi : Les commerçants informels n'ont pas d'historique bancaire → Solution : scoring de crédit basé sur l'historique de transactions Mobile Money.
-Défi : Les agriculteurs ne peuvent pas payer leur assurance récolte en une fois → Solution : paiement fractionné aligné sur les périodes de vente.
+**Prompt envoyé**
+```
+Tu es coach en innovation au Sénégal.
+Contexte : je suis étudiante en Master et je travaille comme chargée de recouvrement chez NSIA Vie Assurances à Dakar. Je dois choisir un problème réel au Sénégal pour un projet de Design Thinking qui aboutira à un MVP avec IA.
+Tâche : propose 3 problèmes que je peux observer directement dans mon travail, avec pour chacun l'utilisateur concerné et pourquoi il est pertinent.
+Format : tableau en français (Problème | Utilisateur | Pertinence).
+```
 
-Complète un 3ème défi : Les assurés à revenus irréguliers oublient leur échéance de cotisation d'assurance vie → Solution : ?
+**Réponse IA (résumé)**
+1) Retards de cotisation des assurés payant par Wave/Orange Money et relances manuelles (utilisatrice : la chargée de recouvrement). 2) Contrats commerciaux papier difficiles à retrouver pour payer les commissions (utilisateurs : contrôleurs). 3) Faible compréhension des produits d'assurance vie par les clients (utilisateurs : assurés).
 
+**Note : 4/5** — Trois pistes réelles. **Choix de l'équipe : le problème 1**, parce que c'est la mission que je vis au quotidien, que j'ai accès au terrain et que l'impact se mesure (arriérés, contrats maintenus).
 
-Tu es un expert en recouvrement digital en Afrique de l'Ouest.
-Analyse le problème suivant : les assurés digitaux d'une compagnie d'assurance vie au Sénégal accumulent des impayés parce que leurs revenus sont irréguliers et que la relance actuelle est intrusive.
-Réfléchis étape par étape :
-Étape 1 : Identifie la cause principale du problème dans le contexte de Dakar.
-Étape 2 : Décris l'obstacle principal qui empêche une relance classique de fonctionner.
-Étape 3 : Propose une solution technologique accessible à cette assurée.
-Développe chaque étape avant de conclure.
+---
 
-demander un message WhatsApp de relance bienveillant,
+## S1-P2 — Préparer le guide d'interview
+
+**Prompt envoyé**
+```
+Tu es expert en recherche utilisateur.
+Contexte : je prépare deux interviews d'empathie de 5 minutes : une chargée de recouvrement d'assurance vie, et un assuré en retard de cotisation qui paie par Wave.
+Tâche : rédige 6 questions ouvertes pour chaque interview, sans proposer de solution et sans orienter les réponses.
+Format : deux listes numérotées en français.
+```
+
+**Réponse IA (résumé)**
+Deux listes de questions ouvertes (« Racontez-moi… », « Que ressentez-vous quand… », « Racontez-moi la dernière fois que… »), sans questions fermées.
+
+**Note : 4/5** — Conforme aux bonnes pratiques de la séance. J'ai ajouté une question sur les promesses de paiement, qui vient de mon expérience terrain. Résultat : [guide-interview.md](guide-interview.md).
+
+---
+
+## S1-P3 — Structurer la carte d'empathie (Few-Shot)
+
+**Prompt envoyé**
+```
+Voici le format de carte d'empathie attendu :
+
+Quadrant : ENTEND
+Observation : « Le client dit qu'il a déjà payé par Wave »
+
+Quadrant : VOIT
+Observation : Des notifications de paiement sans lien avec le numéro de police
+
+À partir de mes notes d'interview ci-dessous, classe chaque observation dans le bon quadrant (PENSE & RESSENT, ENTEND, VOIT, DIT & FAIT, PAINS, GAINS), avec le même format :
+[notes d'interview de la chargée de recouvrement]
+```
+
+**Réponse IA (résumé)**
+Classement des observations dans les 6 zones, au même format que les exemples.
+
+**Note : 4/5** — Gain de temps sur le tri. Deux observations mal classées (un comportement mis dans « Pense ») ont été corrigées à la main. Résultat : [carte-empathie.md](carte-empathie.md).
+
+---
+
+## S1-P4 — Formuler les HMW
+
+### Version 1
+**Prompt envoyé**
+```
+Écris un HMW pour mon projet de recouvrement.
+```
+**Réponse IA (résumé)**
+« Comment pourrions-nous créer une application mobile de recouvrement intelligente pour NSIA ? »
+
+**Note : 2/5** — L'énoncé contient déjà une solution (« application mobile ») et ne dit ni pour qui, ni quel bénéfice : c'est exactement ce que la séance demande d'éviter.
+
+### Version 2 (itération)
+**Prompt envoyé**
+```
+Formule 3 énoncés HMW avec la structure : « Comment pourrions-nous [verbe d'action] pour [utilisateur] afin de [bénéfice] ? ».
+Utilisateur principal : la chargée de recouvrement de NSIA Vie Assurances.
+Insight : elle ne sait pas chaque matin quels assurés relancer en priorité, et les promesses de paiement se perdent.
+Contrainte : aucun énoncé ne doit contenir de solution technologique.
+```
+**Réponse IA (résumé)**
+Trois HMW centrés sur la priorisation des relances, le rattachement des versements aux contrats et le maintien des contrats des assurés à revenu irrégulier.
+
+**Note : 4/5** — Bonne structure, sans solution imposée. Retravaillés et retenus dans [hmw.md](hmw.md).
